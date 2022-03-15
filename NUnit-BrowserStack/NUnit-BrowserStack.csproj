@@ -133,13 +133,16 @@
     <Compile Include="Pages\Orders.cs" />
     <Compile Include="Pages\Home.cs" />
     <Compile Include="Pages\Signin.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Test.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Utilities\BrowserStackLocal" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

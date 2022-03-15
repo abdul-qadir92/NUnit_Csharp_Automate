@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
-
+using System.IO;
 
 namespace BrowserStack
 {
@@ -38,7 +38,7 @@ namespace BrowserStack
                 browserStackLocal = new Local();
                 List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>() {
                     new KeyValuePair<string, string>("key", ConfigurationManager.AppSettings.Get("key")),
-                    new KeyValuePair<string, string>("binarypath", "/Users/qadir/Documents/BrowserStackLocal")
+                    new KeyValuePair<string, string>("binarypath", Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName+"/Utilities/BrowserStackLocal")
                 };
                 browserStackLocal.start(bsLocalArgs);
             }

@@ -11,7 +11,7 @@ namespace BrowserStack
     public LocalTest(string profile, string environment) : base(profile, environment) { }
 
     [SetUp]
-    public void Launch()
+    public void Launch()    
     {
         driver.Manage().Window.Maximize();
         driver.Navigate().GoToUrl("http://localhost:3000/");
