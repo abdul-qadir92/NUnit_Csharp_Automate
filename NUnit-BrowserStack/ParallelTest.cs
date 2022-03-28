@@ -1,12 +1,11 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 
 namespace BrowserStack
 {
-  [TestFixture("parallel", "chrome")]
-  [TestFixture("parallel", "firefox")]
+  [TestFixture("parallel", "iphone12")]
+  [TestFixture("parallel", "samsungS21")]
   [TestFixture("parallel", "safari")]
-  [TestFixture("parallel", "ie")]
+  [TestFixture("parallel", "edge")]
   [Parallelizable(ParallelScope.Fixtures)]
   public class ParallelTest : Test
   {

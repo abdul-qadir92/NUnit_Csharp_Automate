@@ -1,11 +1,9 @@
 ﻿using BrowserStack.Pages;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using System.Text.RegularExpressions;
 
 namespace BrowserStack
 {
-  [TestFixture("local", "chrome")]
+    [TestFixture("local", "edge")]
   public class LocalTest : BrowserStackNUnitTest
   {
     public LocalTest(string profile, string environment) : base(profile, environment) { }

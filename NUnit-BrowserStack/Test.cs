@@ -1,10 +1,11 @@
-﻿using BrowserStack.Pages;
+﻿using System.Collections.Specialized;
+using System.Configuration;
+using BrowserStack.Pages;
 using NUnit.Framework;
-using OpenQA.Selenium;
 
 namespace BrowserStack
 {
-    [TestFixture("single", "chrome")]
+    [TestFixture("single", "edge")]
     public class Test : BrowserStackNUnitTest
     {
         public Test(string profile, string environment) : base(profile, environment) { }
@@ -26,7 +27,9 @@ namespace BrowserStack
         [SetUp]
         public void Launch()
         {
-            driver.Manage().Window.Maximize();
+            NameValueCollection settings = ConfigurationManager.GetSection("environments/" + environment) as NameValueCollection;
+            if (settings.Get("real_mobile")==null)
+                driver.Manage().Window.Maximize();
             driver.Url = "https://bstackdemo.com/";
         }
 
@@ -53,9 +56,8 @@ namespace BrowserStack
             home.verifySignin();
             home.verifyimageLoaded();
         }
-
-        /*
-        [TearDown]
+  
+        /*[TearDown]        // To Run on premise
         public void TearDown()
         {
             driver.Quit();

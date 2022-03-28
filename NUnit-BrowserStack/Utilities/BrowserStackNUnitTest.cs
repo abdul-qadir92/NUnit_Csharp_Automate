@@ -53,6 +53,7 @@ namespace BrowserStack
 
             //Set Build names in the caps
             var writableCollection = new NameValueCollection(caps);
+
             writableCollection.Set("build", caps.Get("project") + "-build-" + build);
             writableCollection.Set("name", TestContext.CurrentContext.Test.Name);
 
@@ -83,14 +84,6 @@ namespace BrowserStack
       capability.SetCapability("browserstack.user", username);
       capability.SetCapability("browserstack.key", accesskey);
 
-      if (capability.GetCapability("browserstack.local") != null && capability.GetCapability("browserstack.local").ToString() == "true")
-      {
-        /*browserStackLocal = new Local();
-        List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>() {
-          new KeyValuePair<string, string>("key", accesskey)
-        };
-        browserStackLocal.start(bsLocalArgs);*/
-      }
 
       driver = new RemoteWebDriver(new Uri("http://"+ ConfigurationManager.AppSettings.Get("server") +"/wd/hub/"), capability);
     }
