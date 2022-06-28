@@ -21,10 +21,6 @@ steps:
     vstsFeed: 'c56dec11-0fc7-491a-b84b-44197bbb1b5e'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-- task: DotNetCoreCLI@2
-  inputs:
     command: 'test'
     projects: '**/Test.dll'
 - task: BrowserStackResults@1
