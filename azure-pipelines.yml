@@ -15,6 +15,10 @@ steps:
     BrowserStackServiceEndPoint: 'BrowserStack Demo'
 - task: DotNetCoreCLI@2
   inputs:
+    command: 'build'
+    projects: '**/Test.csproj'
+- task: DotNetCoreCLI@2
+  inputs:
     command: 'test'
     projects: '**/Test.csproj'
     testRunTitle: 'Single Device Tests'
