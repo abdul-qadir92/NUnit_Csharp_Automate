@@ -22,7 +22,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '**/Test.dll'
+    projects: '**/*Test.dll'
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
