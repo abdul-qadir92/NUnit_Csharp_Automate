@@ -16,8 +16,8 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '**/ParallelTest.csproj'
-    testRunTitle: 'Parallel Tests'
+    projects: '**/Test.csproj'
+    testRunTitle: 'Single Device Tests'
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
