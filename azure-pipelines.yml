@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: macOS-latest
+  vmImage: ubuntu-latest
 
 steps:
 - task: BrowserStackConfig@0
